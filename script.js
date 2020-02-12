@@ -42,18 +42,19 @@ document.addEventListener('DOMContentLoaded', function(){
         left = 'ArrowLeft',
         down = 'ArrowDown',
         right = 'ArrowRight';
-    if(e.key === up){
-      y -= 10;
-    }
-    if(e.key === down){
-      y += 10;
-    }
-    if(e.key === left){
-      x -= 10;
-    }
-    if(e.key === right){
-      x += 10;
-    }
+    // if(e.key === up){
+    //   y -= 10;
+    // }
+    // if(e.key === down){
+    //   y += 10;
+    // }
+    // if(e.key === left){
+    //   x -= 10;
+    // }
+    // if(e.key === right){
+    //   x += 10;
+    // }
+    e.key === up ? y -= 10 : e.key === down ? y += 10 : e.key === left ? x -= 10 : e.key === right ? x += 10 : 0;
     el.style.transform = `translate(${x}px, ${y}px)`;
   });
 });
