@@ -12,12 +12,12 @@ DomElement.prototype.createElement = function(){
   let element;
   if(this.selector[0] === '.'){
     element = document.createElement('div');
-    element.classList.add('block');
+    element.classList.add(this.selector.slice(1 ));
     document.body.appendChild(element);
   }
   if(this.selector[0] === '#'){
-    element = document.createElement('div');
-    element.id = 'best';
+    element = document.createElement('p');
+    element.id = this.selector.slice(1);
     document.body.appendChild(element);
   }
   element.style.cssText = `height: ${this.height}px;
@@ -31,7 +31,7 @@ DomElement.prototype.createElement = function(){
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  const domElem = new DomElement('#asd', 100, 100, 'red', 25);
+  const domElem = new DomElement('#lmsafklsafd', 100, 100, 'red', 25);
   let el = domElem.createElement();
   el.style.position = 'absolute';
   el.style.left = '50%';
