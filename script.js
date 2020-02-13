@@ -54,7 +54,10 @@ document.addEventListener('DOMContentLoaded', function(){
     // if(e.key === right){
     //   x += 10;
     // }
-    e.key === up ? y -= 10 : e.key === down ? y += 10 : e.key === left ? x -= 10 : e.key === right ? x += 10 : 0;
+
+    // e.key === up ? y -= 10 : e.key === down ? y += 10 : e.key === left ? x -= 10 : e.key === right ? x += 10 : 0;
+    y = (e.key === up && (y -= 10)) || (e.key === down && (y += 10)) || y;
+    x = (e.key === left && (x -= 10)) || (e.key === right && (x += 10)) || x;
     el.style.transform = `translate(${x}px, ${y}px)`;
   });
 });
